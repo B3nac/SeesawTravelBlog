@@ -1,3 +1,4 @@
+
 <html>
 <head>
         <link href="../static/output.css" rel="stylesheet">
@@ -7,13 +8,13 @@
 <header class="bg-white">
   <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
-      <a href="index.html" class="-m-1.5 p-1.5">
+      <a href="#" class="-m-1.5 p-1.5">
         <span class="sr-only">SeesawTravelBlog</span>
 	<img class="h-8 w-auto" src="../static/seesaw.png" alt=""><p>SeesawTravelBlog</p>
       </a>
     </div>
     <div class="flex lg:hidden">
-      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 sandwichmobilebutton">
         <span class="sr-only">Destinations</span>
         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -110,14 +111,14 @@
           </div>
         </div>
       </div>
-      <a href="index.html#tips" class="text-sm font-semibold leading-6 text-gray-900">International Tips</a>
+      <a href="#tips" class="text-sm font-semibold leading-6 text-gray-900">International Tips</a>
       <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Recommended Gear</a>
       <a href="packing_list.html" class="text-sm font-semibold leading-6 text-gray-900">Packing List</a>
       <a href="about.html" class="text-sm font-semibold leading-6 text-gray-900">About Us</a>
     </div>
   </nav>
   <!-- Mobile menu, show/hide based on menu open state. -->
-  <div class="lg:hidden mobilemenu role="dialog" aria-modal="true">
+  <div class="mobilemenu hidden role="dialog" aria-modal="true">
     <!-- Background backdrop, show/hide based on slide-over state. -->
     <div class="fixed inset-0 z-10"></div>
     <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
@@ -126,7 +127,7 @@
           <span class="sr-only">SeesawTravelBlog</span>
 	  <img class="h-8 w-auto" src="../static/seesaw.png" alt=""><p>SeesawTravelBlog</p>
         </a>
-        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 mobilebutton">
           <span class="sr-only">Close menu</span>
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -137,7 +138,7 @@
         <div class="-my-6 divide-y divide-gray-500/10">
           <div class="space-y-2 py-6">
             <div class="-mx-3">
-              <button type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 productmenu" aria-controls="disclosure-1" aria-expanded="false">
+              <button type="button" class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dmobilebutton" aria-controls="disclosure-1" aria-expanded="false">
                 Destinations
                 <!--
                   Expand/collapse icon, toggle classes based on menu open state.
@@ -149,7 +150,7 @@
                 </svg>
               </button>
               <!-- 'Destinations' sub-menu, show/hide based on menu state. -->
-              <div class="mt-2 space-y-2 hidden productmenu" id="disclosure-1">
+              <div class="mt-2 space-y-2 dmobilemenu hidden" id="disclosure-1">
                 <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Geneva, Switzerland</a>
                 <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Chamonix, France</a>
                 <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Lauterbrunnen Valley, Switzerland</a>
@@ -159,7 +160,7 @@
               </div>
             </div>
           </div>
-	  <p><a href="index.html#tips" class="text-sm font-semibold leading-6 text-gray-900">International Tips</a></p>
+	  <p><a href="#tips" class="text-sm font-semibold leading-6 text-gray-900">International Tips</a></p>
 	  <p><a href="#" class="text-sm font-semibold leading-6 text-gray-900">Recommended Gear</a></p>
 	  <p><a href="packing_list.html" class="text-sm font-semibold leading-6 text-gray-900">Packing List</a></p>
 	  <p><a href="about.html" class="text-sm font-semibold leading-6 text-gray-900">About Us</a></p>
@@ -168,10 +169,13 @@
     </div>
   </div>
   <script>
-		const btn = document.querySelector("button.productmenu");
+		const btn = document.querySelector("button.dmobilebutton");
 		const destbtn = document.querySelector("button.destinationbutton");
-		const menu = document.querySelector("div.productmenu");
-		const destinationmenu = document.querySelector(".destinationmenu");
+		const mobilebtn = document.querySelector("button.mobilebutton");
+		const sandwichmobilebtn = document.querySelector("button.sandwichmobilebutton")
+		const menu = document.querySelector("div.dmobilemenu");
+		const destinationmenu = document.querySelector("div.destinationmenu");
+		const mobilemenu = document.querySelector("div.mobilemenu");
 
 		btn.addEventListener("click", () => {
 		menu.classList.toggle("hidden");
@@ -180,6 +184,14 @@
 		destbtn.addEventListener("click", () => {
                 destinationmenu.classList.toggle("hidden");
 		});
+
+		mobilebtn.addEventListener("click", () => {
+                mobilemenu.classList.toggle("hidden");
+                });
+
+		sandwichmobilebtn.addEventListener("click", () => {
+                mobilemenu.classList.toggle("hidden");
+                });
   </script>
 </header>
 
@@ -212,4 +224,3 @@
     </div>
 </footer>
 </html>
-
